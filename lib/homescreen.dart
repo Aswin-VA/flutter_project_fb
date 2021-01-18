@@ -1,6 +1,21 @@
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatelessWidget {
+  // ignore: missing_return
+  Widget topIcons() {
+    return Container(
+      margin: EdgeInsets.all(4),
+      decoration:
+          BoxDecoration(shape: BoxShape.circle, color: Colors.grey[500]),
+      child: IconButton(
+        icon: Icon(Icons.message_rounded),
+        onPressed: () {
+          print("messenger");
+        },
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -8,35 +23,16 @@ class HomeScreen extends StatelessWidget {
       title: "Facebook",
       home: Scaffold(
         appBar: AppBar(
-          actions: [
-            Container(
-              decoration: BoxDecoration(
-                shape: BoxShape.circle,
-              ),
-              child: IconButton(
-                icon: Icon(Icons.search),
-                onPressed: () {
-                  print("messenger");
-                },
-              ),
-            ),
-            Container(
-              decoration: BoxDecoration(
-                shape: BoxShape.circle,
-              ),
-              child: IconButton(
-                icon: Icon(Icons.message_rounded),
-                onPressed: () {
-                  print("messenger");
-                },
-              ),
-            ),
-          ],
           title: Text(
             "Facebook",
-            style: TextStyle(color: Colors.blue),
-            textScaleFactor: 15,
+            style: TextStyle(
+                color: Colors.blue, fontSize: 23, fontWeight: FontWeight.w800),
           ),
+          backgroundColor: Colors.white,
+          actions: [
+            topIcons(),
+            topIcons(),
+          ],
         ),
       ),
     );
